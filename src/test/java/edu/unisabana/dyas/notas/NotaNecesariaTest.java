@@ -26,4 +26,10 @@ class NotaNecesariaTest {
     void avisaCuandoYaNoEsPosibleAprobar() {
         assertThrows(IllegalStateException.class, () -> calculadora.notaNecesariaTercerCorte(1.0, 1.0));
     }
+
+    @ParameterizedTest
+    @CsvSource({"-0.1, 3.0", "3.0, 5.1"})
+    void rechazaNotasFueraDeRango(double c1, double c2) {
+        assertThrows(IllegalArgumentException.class, () -> calculadora.notaNecesariaTercerCorte(c1, c2));
+    }
 }
