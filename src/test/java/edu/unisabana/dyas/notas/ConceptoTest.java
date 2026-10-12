@@ -13,7 +13,7 @@ class ConceptoTest {
 
     @ParameterizedTest(name = "{0} -> {1}")
     @CsvSource({
-            "5.0, Excelente",
+            "5.0, Sobresaliente", // error intencional para probar la rama protegida
             "4.5, Excelente",
             "4.4, Sobresaliente",
             "4.0, Sobresaliente",
